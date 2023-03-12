@@ -1,0 +1,20 @@
+{
+  "insurance-etc": [
+    "credit", "cash", "home", "mortgage", "rate", "loan", "refinance"
+  ],
+  "investment": [
+    "stock", "market", "price", "invest", "interest", "statement", "secur", "base", "risk", "trade"
+  ],
+  "medical-sales": [
+    "pill", "buy", "medication", "drug", "prescription", "med", "doctor", "viagra", "pain", "effect"
+  ],
+  "phising": [
+    "lottery", "win", "bank", "award", "money", "confidenti", "agent", "winner", "prize"
+  ],
+  "sexual": [
+    "sex", "horny", "date", "free", "sex", "woman", "girl", "sexual", "video", "porn", "adult", "cheat", "hottest", "teen", "cum" 
+  ],
+  "software-sales": [
+    "software", "price", "microsoft", "adobe", "office", "system", "photoshop", "window", "offer", "download", "server"
+  ]
+}
