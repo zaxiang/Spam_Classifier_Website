@@ -13,22 +13,22 @@ from flask import Flask, request, render_template
 import pickle
 
 
-from sklearn.feature_extraction.text import TfidfVectorizer
-import string
-from nltk.stem.porter import *
-import nltk.corpus
-nltk.download('stopwords')
-from nltk.corpus import stopwords
-from nltk.stem import WordNetLemmatizer 
-nltk.download('wordnet')
-nltk.download('omw-1.4')
-lemmatizer = WordNetLemmatizer()
+# from sklearn.feature_extraction.text import TfidfVectorizer
+# import string
+# from nltk.stem.porter import *
+# import nltk.corpus
+# nltk.download('stopwords')
+# from nltk.corpus import stopwords
+# from nltk.stem import WordNetLemmatizer 
+# nltk.download('wordnet')
+# nltk.download('omw-1.4')
+# lemmatizer = WordNetLemmatizer()
 
 #Create an app object using the Flask class. 
 app = Flask(__name__)
 
 #Load the trained model. (Pickle file)
-model = pickle.load(open('models/model.pkl', 'rb'))
+model = pickle.load(open('models/model_tfidf.pkl', 'rb'))
 
 #Define the route to be home. 
 #The decorator below links the relative route of the URL to the function it is decorating.
@@ -49,23 +49,9 @@ def home():
 @app.route('/predict',methods=['POST'])
 def predict():
 
-	input_email = request.form.values() #put into list to match our format 
-	# tfidf_vectorizer = TfidfVectorizer()
-	# tokenizer = tfidf_vectorizer.build_tokenizer()   
-	# punct = string.punctuation
-	# stemmer = PorterStemmer()
-
-	# english_stops = set(stopwords.words('english'))
-
-	# doc = input_email
-	# doc = str(doc.lower())
-	# doc = [i for i in doc if not (i in punct)] # non-punct characters
-	# doc = ''.join(doc) # convert back to string
-	# words = tokenizer(doc) # tokenizes
-	# words = [w for w in words if w not in english_stops] #remove stop words
-	# words = [lemmatizer.lemmatize(stemmer.stem(w)) for w in words] #stemmer and lemmatizer
-
-	output = model.get_prediction()
+	input_email = request.form.values() 
+	input_email_str = ''.join(input_email)
+	output = model.predict(input_email_str)
 
 	return render_template('index.html', prediction_text='Predicted Spam Class is {}'.format(output))
 
