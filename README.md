@@ -1,5 +1,5 @@
 # Spam Email Classifier Website
-DSC180 Quarter 2 Capstone Project Interative Website. \
+DSC180 Quarter 2 Capstone Project Interative Website.
 
 We classify harmful spam messages into categories such as insurance scams, medical sales, software sales, and more. We deploy our weakly supervised trained machine learning models on the website, and it will run on localhost following the instructions below.
  
