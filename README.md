@@ -4,10 +4,11 @@ DSC180 Quarter 2 Capstone Project Interative Website \
  
 ## Running the Website Page
 **Commands**
+clone this github repo into your local computer.
 ``` 
-git clone [link]
+git clone https://github.com/zaxiang/Spam_Classifier_Website.git
 ```
-To run this website, cd into the repo folder and execute the following command;
+To run this website, cd into the repo folder and execute the following command
 ```
 flask run
 ```
